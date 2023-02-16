@@ -1,9 +1,9 @@
 import React from "react";
-import ChatMessage from "./ChatMessage";
-import GetMessage from "./GetMessage";
+import ChatMessage from "../components/ChatMessage";
+import GetMessage from "../components/GetMessage";
 import { useState } from "react";
 
-const Chatbox = ({ currentModel }) => {
+const Chatbox = ({ APIKEY }) => {
   const [chatLog, setChatLog] = useState([]);
 
   const [inputMesaage, setInputMessage] = useState("");
@@ -13,10 +13,12 @@ const Chatbox = ({ currentModel }) => {
     let message = inputMesaage;
     setChatLog([...chatLog, { user: "me", message: message }]);
     setInputMessage("");
+
     const value = await GetMessage({
       prompt: message,
-      model: currentModel,
+      APIKEY: APIKEY,
     });
+
     setChatLog([
       ...chatLog,
       { user: "me", message: message },
@@ -32,6 +34,7 @@ const Chatbox = ({ currentModel }) => {
           <ChatMessage key={index} message={message} />
         ))}
       </div>
+
       <div className="chat-input-holder">
         <form onSubmit={handleSubmit}>
           <input

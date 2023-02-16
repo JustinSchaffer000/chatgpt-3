@@ -1,5 +1,3 @@
-const openai_api_key = "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";
-
 const DEFAULT_PARAMS = {
   model: "text-davinci-003",
   temperature: 0.7,
@@ -10,7 +8,11 @@ const DEFAULT_PARAMS = {
 };
 
 const GetMessage = async (params = {}) => {
-  const params_ = { ...DEFAULT_PARAMS, ...params };
+  let params_ = DEFAULT_PARAMS;
+  params_["prompt"] = params["prompt"];
+  const openai_api_key = params["APIKEY"];
+  // console.log("parma", params_);
+  // console.log("APIKEY", openai_api_key);
   const requestOptions = {
     method: "POST",
     headers: {
@@ -24,7 +26,7 @@ const GetMessage = async (params = {}) => {
     requestOptions
   );
   const data = await response.json();
-  console.log(data);
+  // console.log(data);
   return data.choices[0].text;
 };
 

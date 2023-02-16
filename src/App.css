@@ -3,34 +3,14 @@
   display: flex;
   background-color: #282c34;
   color: white;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
+  position: relative;
+  height: 100vh;
 }
 
 .sidemenu {
   width: 260px;
   padding: 10px;
   background-color: #202123;
-}
-
-.side-menu-button {
-  padding: 15px;
-  border: 1px solid white;
-  border-radius: 5px;
-  text-align: left;
-  transition: ease 0.25s all;
-}
-
-.side-menu-button:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.side-menu-button span {
-  padding-left: 6px;
-  padding-right: 12px;
 }
 
 .models.modeloption {
@@ -44,6 +24,35 @@
   flex: 1;
   background-color: #343541;
   position: relative;
+}
+
+.APIKEY-input-page {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.APIKEY-input-page > div {
+  padding-top: 10px;
+}
+
+.APIKEY-input-page > label {
+  display: flex;
+  align-items: flex-start;
+}
+
+.APIKEY-input-textarea {
+  background-color: #40414f;
+  width: 90%;
+  padding: 12px;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.25em;
+  border: none;
+  border-color: none;
+  outline: none;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2 5);
 }
 
 .chat-input-holder {
@@ -110,25 +119,6 @@
   border-radius: 50%;
   width: 40px;
   height: 40px;
-}
-
-.modellabel {
-  text-align: left;
-  padding-top: 20px;
-  padding-bottom: 10px;
-  padding-left: 0px;
-  font-size: 20px;
-}
-
-.modeloption {
-  width: 100%;
-  padding: 15px;
-  border: 1px solid white;
-  border-radius: 5px;
-  text-align: left;
-  font-size: 20px;
-  transition: ease 0.25s all;
-  background-color: #202123;
 }
 
 .message {

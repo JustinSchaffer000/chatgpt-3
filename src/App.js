@@ -1,16 +1,18 @@
 import "./App.css";
-// import Sidebar from "./components/Sidebar";
-import Chatbox from "./components/Chatbox";
-
+import Chatbox from "./pages/Chatbox";
+import InputKey from "./pages/InputKey";
 import { useState } from "react";
 
 function App() {
-  const [currentModel, setCurrentModel] = useState("text-davinci-003");
+  const [ApiKEY, setApiKEY] = useState("");
 
   return (
     <div className="App">
-      {/* <Sidebar setCurrentModel={setCurrentModel} /> */}
-      <Chatbox currentModel={currentModel} />
+      {ApiKEY ? (
+        <Chatbox APIKEY={ApiKEY} />
+      ) : (
+        <InputKey setApiKEY={setApiKEY} />
+      )}
     </div>
   );
 }
