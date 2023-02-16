@@ -1,6 +1,6 @@
 import React from "react";
 import ChatMessage from "./ChatMessage";
-import getMessage from "./GetMessage";
+import GetMessage from "./GetMessage";
 import { useState } from "react";
 
 const Chatbox = ({ currentModel }) => {
@@ -13,7 +13,7 @@ const Chatbox = ({ currentModel }) => {
     let message = inputMesaage;
     setChatLog([...chatLog, { user: "me", message: message }]);
     setInputMessage("");
-    const value = await getMessage.Ans({
+    const value = await GetMessage({
       prompt: message,
       model: currentModel,
     });

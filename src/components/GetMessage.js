@@ -1,4 +1,4 @@
-const openai_api_key = "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";
+const openai_api_key = "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";
 
 const DEFAULT_PARAMS = {
   model: "text-davinci-003",
@@ -9,7 +9,7 @@ const DEFAULT_PARAMS = {
   presence_penalty: 0,
 };
 
-const Ans = async (params = {}) => {
+const GetMessage = async (params = {}) => {
   const params_ = { ...DEFAULT_PARAMS, ...params };
   const requestOptions = {
     method: "POST",
@@ -24,7 +24,8 @@ const Ans = async (params = {}) => {
     requestOptions
   );
   const data = await response.json();
+  console.log(data);
   return data.choices[0].text;
 };
 
-exports.Ans = Ans;
+export default GetMessage;

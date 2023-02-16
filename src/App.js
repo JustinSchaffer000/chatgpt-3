@@ -1,5 +1,5 @@
 import "./App.css";
-import Sidebar from "./components/Sidebar";
+// import Sidebar from "./components/Sidebar";
 import Chatbox from "./components/Chatbox";
 
 import { useState } from "react";
@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div className="App">
-      <Sidebar setCurrentModel={setCurrentModel} />
+      {/* <Sidebar setCurrentModel={setCurrentModel} /> */}
       <Chatbox currentModel={currentModel} />
     </div>
   );
